@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "GitHub Slop Detector",
+  "version": "1.0",
+
+  "description": "Detects LLM Coding tools in GitHub Projects.",
+
+  "icons": {
+    "48": "icons/icon-48.png"
+  },
+
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "git@notpyx.me",
+      "data_collection_permissions": {
+        "required": ["none"]
+      }
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.github.com/*"],
+      "js": ["slop.js"]
+    }
+  ]
+}
